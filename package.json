@@ -1,7 +1,7 @@
 {
   "name": "node",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "logEvents.js",
   "scripts": {
     "start": "node index",
     "dev": "nodemon index",
