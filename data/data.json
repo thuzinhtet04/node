@@ -1,1 +1,30 @@
-d
+{
+  "orderId": "6b3e8e1a-5f8d-4e2b-a7c5-3a0f9b6c1d4e",
+  "customer": {
+    "firstName": "Jasmine",
+    "lastName": "Chen",
+    "email": "jasmine.chen@example.com"
+  },
+  "items": [
+    {
+      "productId": 101,
+      "productName": "Wireless Bluetooth Earbuds",
+      "quantity": 2,
+      "price": 79.99
+    },
+    {
+      "productId": 205,
+      "productName": "Ergonomic Desk Chair",
+      "quantity": 1,
+      "price": 249.00
+    }
+  ],
+  "shippingAddress": {
+    "street": "123 Tech Avenue",
+    "city": "Innovateville",
+    "state": "CA",
+    "zipCode": "90210"
+  },
+  "orderDate": "2025-08-01T10:30:00Z",
+  "status": "Shipped"
+}
