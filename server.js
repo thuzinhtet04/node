@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3500;
 const whitelists = ["https://www.google.com"];
 const corsOptions = {
   origin: (origin, callback) => {
-    if (whitelists.indexOf(origin) !== -1) {
+    if (whitelists.indexOf(origin) !== -1 || !origin) {
       callback(null, true);
     } else {
       callback(new Error("this origin is not allowed"));
@@ -16,6 +16,7 @@ const corsOptions = {
   },
   optionsSuccessStatus: 200,
 };
+
 app.use(cors(corsOptions));
 app.use(express.urlencoded({ extended: false })); // for formdata like x-www-form-urlencoded
 
@@ -32,6 +33,22 @@ app.get(/^\/$|\/index(?:.html)?$/, (req, res) => {
 app.get("/new-page", (req, res) => {
   res.sendFile(path.join(__dirname, "views", "new-page.html"));
 });
+
+const one = (req, res , next) => {
+  console.log('one');
+  next()
+}
+const two = (req, res, next) => {
+  console.log("two");
+  next();
+};
+
+const three = (req, res, next) => {
+  console.log("three fishish!");
+  res.send('finish chained')
+};
+app.get('/chain' , [one , two , three]) // step by step callback with next() function based on middleware 
+
 app.use(errorHandler);
 
 app.listen(PORT, () => console.log(`server running on port ${PORT}`));
