@@ -1,0 +1,37 @@
+const path = require("path");
+const express = require("express");
+const cors = require("cors");
+const errorHandler = require("./middleware/errorHandler");
+const app = express();
+const PORT = process.env.PORT || 3500;
+
+const whitelists = ["https://www.google.com"];
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (whitelists.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error("this origin is not allowed"));
+    }
+  },
+  optionsSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
+app.use(express.urlencoded({ extended: false })); // for formdata like x-www-form-urlencoded
+
+app.use(express.json()); //middleware for json data
+
+app.use(express.static(path.join(__dirname, "/public")));
+
+app.get(/^\/$|\/index(?:.html)?$/, (req, res) => {
+  //^ for begin ,$ for end , | for OR , it make startorend with / or index.html
+  //   res.sendFile("./views/index.html", { root: __dirname });
+  res.sendFile(path.join(__dirname, "views", "index.html"));
+});
+
+app.get("/new-page", (req, res) => {
+  res.sendFile(path.join(__dirname, "views", "new-page.html"));
+});
+app.use(errorHandler);
+
+app.listen(PORT, () => console.log(`server running on port ${PORT}`));

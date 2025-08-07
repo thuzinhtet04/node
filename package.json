@@ -20,6 +20,7 @@
   "homepage": "https://github.com/thuzinhtet04/node#readme",
   "description": "",
   "dependencies": {
+    "cors": "^2.8.5",
     "date-fns": "^4.1.0",
     "express": "^5.1.0",
     "uuid": "^11.1.0"
