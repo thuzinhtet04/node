@@ -5,3 +5,15 @@
 20250810	16:05:54	ec10c5da-524f-403d-a023-c4215d024ec0	Error : Cannot set headers after they are sent to the client 
 20250810	16:15:10	030b2a69-34a7-4e20-9d39-c1c6a45f1c08	SyntaxError : Expected double-quoted property name in JSON at position 44 (line 5 column 1) 
 20250810	16:17:10	133e1da9-9a2a-483b-93e8-d735d23f741f	SyntaxError : Expected double-quoted property name in JSON at position 14 (line 3 column 1) 
+20250810	18:43:15	6d8aaadb-9f94-45d1-8314-353641dbc4b7	Error : Cannot set headers after they are sent to the client 
+20250810	18:44:13	1e1b2bce-af5e-4035-b052-dcfcfc6c78fd	Error : Cannot set headers after they are sent to the client 
+20250810	18:44:35	408257c4-92fe-4021-8649-bba211a944b7	Error : Cannot set headers after they are sent to the client 
+20250810	18:45:18	39e84f72-02aa-4f4a-8496-1080902eb6ca	Error : Cannot set headers after they are sent to the client 
+20250810	18:46:03	2c89774f-a00b-4085-b365-fac48ea9b494	Error : Cannot set headers after they are sent to the client 
+20250810	18:46:39	02a0dd01-c35e-43fd-a0e7-bc571ac54d78	Error : Cannot set headers after they are sent to the client 
+20250810	18:47:07	1c0b0540-6e7c-4922-bece-8f0256c78afa	Error : Cannot set headers after they are sent to the client 
+20250810	18:51:02	1bd6dfcc-0059-491c-9a0f-d895449c2521	TypeError : Cannot destructure property 'user' of 'req.body' as it is undefined. 
+20250810	19:50:53	e0e7138b-0bcb-4057-9ced-d8b29439c737	Error : Cannot set headers after they are sent to the client 
+20250810	19:52:23	775ec870-4d8f-4a33-bb09-9fff8fc4c50c	Error : Cannot set headers after they are sent to the client 
+20250810	19:53:04	33439ee9-9cf8-4ff6-a80f-8230db1ff03c	Error : Cannot set headers after they are sent to the client 
+20250810	19:53:31	97646c22-ccd4-4e64-b85b-dab2a375a4d8	Error : Cannot set headers after they are sent to the client 

@@ -3,6 +3,8 @@ const express = require("express");
 const cors = require("cors");
 const corsOptions = require("./config/corsOptions");
 const errorHandler = require("./middleware/errorHandler");
+const verifyJWT = require("./middleware/verifyJWT");
+const cookieParser = require('cookie-parser')
 const app = express();
 const PORT = process.env.PORT || 3500;
 
@@ -15,15 +17,19 @@ app.use(express.urlencoded({ extended: false }));
 //built-in middleware to handle json
 app.use(express.json()); //middleware for json data
 
+//middleware for cookie
+app.use(cookieParser());
+
 // serve static file like Image,html,css and json file
 app.use("/", express.static(path.join(__dirname, "/public")));
 
 //routes
 app.use("/", require("./routes/root"));
-app.use("/employees", require("./routes/api/employee"));
 app.use("/register", require("./routes/register"));
 app.use("/login", require("./routes/auth"));
-
+app.use('/refresh' , require('./routes/refresh'))
+app.use(verifyJWT); //apply middleware for all route under this line
+app.use("/employees", require("./routes/api/employee"));
 // 404 page handler
 app.use((req, res, next) => {
   res.status(404);
