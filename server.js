@@ -24,6 +24,8 @@ app.use(express.json()); //middleware for json data
 
 app.use(express.static(path.join(__dirname, "/public")));
 
+app.use("/subdir", require("./routes/subdir"));
+
 app.get(/^\/$|\/index(?:.html)?$/, (req, res) => {
   //^ for begin ,$ for end , | for OR , it make startorend with / or index.html
   //   res.sendFile("./views/index.html", { root: __dirname });
