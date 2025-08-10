@@ -1,35 +1,30 @@
 const path = require("path");
 const express = require("express");
 const cors = require("cors");
+const corsOptions = require('./config/corsOptions')
 const errorHandler = require("./middleware/errorHandler");
 const app = express();
 const PORT = process.env.PORT || 3500;
 
-const whitelists = ["https://www.google.com"];
-const corsOptions = {
-  origin: (origin, callback) => {
-    if (whitelists.indexOf(origin) !== -1 || !origin) {
-      callback(null, true);
-    } else {
-      callback(new Error("this origin is not allowed"));
-    }
-  },
-  optionsSuccessStatus: 200,
-};
 
+// Cross Origin Resource Sharing
 app.use(cors(corsOptions));
-app.use(express.urlencoded({ extended: false })); // for formdata like x-www-form-urlencoded
 
+//built-in middleware to handle urlencoded from data
+app.use(express.urlencoded({ extended: false })); 
+
+//built-in middleware to handle json 
 app.use(express.json()); //middleware for json data
 
+// serve static file like Image,html,css and json file
 app.use( "/" , express.static(path.join(__dirname, "/public")));
-app.use("/subdir", express.static(path.join(__dirname, "/public")));
 
+
+//routes
 app.use("/", require("./routes/root"));
-app.use("/subdir", require("./routes/subdir"));
 app.use("/employees", require("./routes/api/employee"));
 
-// 👇 All your other routes go above this
+// 404 page handler
 app.use((req, res, next) => {
   res.status(404);
   if (req.accepts("html")) {

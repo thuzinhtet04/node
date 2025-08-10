@@ -2,3 +2,6 @@
 20250807	23:57:35	3a07c647-0505-4a3b-9a85-58326c1165d3	TypeError : req.accepted is not a function 
 20250810	15:23:39	856fea9a-fca8-4cd2-a05e-428b609b39dc	Error : this origin is not allowed 
 20250810	15:25:20	d8b1560c-5b90-4811-a70f-dfb5ebb635c2	SyntaxError : Expected double-quoted property name in JSON at position 54 (line 4 column 1) 
+20250810	16:05:54	ec10c5da-524f-403d-a023-c4215d024ec0	Error : Cannot set headers after they are sent to the client 
+20250810	16:15:10	030b2a69-34a7-4e20-9d39-c1c6a45f1c08	SyntaxError : Expected double-quoted property name in JSON at position 44 (line 5 column 1) 
+20250810	16:17:10	133e1da9-9a2a-483b-93e8-d735d23f741f	SyntaxError : Expected double-quoted property name in JSON at position 14 (line 3 column 1) 
