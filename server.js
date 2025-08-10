@@ -27,6 +27,7 @@ app.use("/subdir", express.static(path.join(__dirname, "/public")));
 
 app.use("/", require("./routes/root"));
 app.use("/subdir", require("./routes/subdir"));
+app.use("/employees", require("./routes/api/employee"));
 
 // 👇 All your other routes go above this
 app.use((req, res, next) => {
