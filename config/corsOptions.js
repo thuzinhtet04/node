@@ -1,5 +1,5 @@
-const credientials = require("../middleware/credientials");
 const whitelists = require("./allowedOrigin");
+
 const corsOptions = {
   origin: (origin, callback) => {
     if (whitelists.indexOf(origin) !== -1 || !origin) {
@@ -8,7 +8,7 @@ const corsOptions = {
       callback(new Error("this origin is not allowed"));
     }
   },
-  
+  credentials: true, //add true for preflight that use crediential include from front-end request
   optionsSuccessStatus: 200,
 };
 module.exports = corsOptions;

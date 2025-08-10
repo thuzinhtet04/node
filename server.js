@@ -5,12 +5,13 @@ const corsOptions = require("./config/corsOptions");
 const errorHandler = require("./middleware/errorHandler");
 const verifyJWT = require("./middleware/verifyJWT");
 const cookieParser = require("cookie-parser");
-const credientials = require('./middleware/credientials')
+const credientials = require("./middleware/credientials");
 const app = express();
 const PORT = process.env.PORT || 3500;
 
 //use before cors middleware because this middleware set accessControlAllowOrigin to true that need in cors
-app.use(credientials) // especially for pre-fligth response
+// especially for pre-fligth response
+// app.use(credientials);
 
 // Cross Origin Resource Sharing
 app.use(cors(corsOptions));
@@ -33,7 +34,6 @@ app.use("/register", require("./routes/register"));
 app.use("/login", require("./routes/auth"));
 app.use("/refresh", require("./routes/refresh"));
 app.use("/logout", require("./routes/logout"));
-
 
 app.use(verifyJWT); //apply middleware for all route under this line
 app.use("/employees", require("./routes/api/employee"));
