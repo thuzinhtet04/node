@@ -1,28 +1,28 @@
 const path = require("path");
 const express = require("express");
 const cors = require("cors");
-const corsOptions = require('./config/corsOptions')
+const corsOptions = require("./config/corsOptions");
 const errorHandler = require("./middleware/errorHandler");
 const app = express();
 const PORT = process.env.PORT || 3500;
-
 
 // Cross Origin Resource Sharing
 app.use(cors(corsOptions));
 
 //built-in middleware to handle urlencoded from data
-app.use(express.urlencoded({ extended: false })); 
+app.use(express.urlencoded({ extended: false }));
 
-//built-in middleware to handle json 
+//built-in middleware to handle json
 app.use(express.json()); //middleware for json data
 
 // serve static file like Image,html,css and json file
-app.use( "/" , express.static(path.join(__dirname, "/public")));
-
+app.use("/", express.static(path.join(__dirname, "/public")));
 
 //routes
 app.use("/", require("./routes/root"));
 app.use("/employees", require("./routes/api/employee"));
+app.use("/register", require("./routes/register"));
+app.use("/login", require("./routes/auth"));
 
 // 404 page handler
 app.use((req, res, next) => {
