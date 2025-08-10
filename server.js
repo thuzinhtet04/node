@@ -22,35 +22,11 @@ app.use(express.urlencoded({ extended: false })); // for formdata like x-www-for
 
 app.use(express.json()); //middleware for json data
 
-app.use(express.static(path.join(__dirname, "/public")));
+app.use( "/" , express.static(path.join(__dirname, "/public")));
+app.use("/subdir", express.static(path.join(__dirname, "/public")));
 
+app.use("/", require("./routes/root"));
 app.use("/subdir", require("./routes/subdir"));
-
-app.get(/^\/$|\/index(?:.html)?$/, (req, res) => {
-  //^ for begin ,$ for end , | for OR , it make startorend with / or index.html
-  //   res.sendFile("./views/index.html", { root: __dirname });
-  res.sendFile(path.join(__dirname, "views", "index.html"));
-});
-
-app.get("/new-page", (req, res) => {
-  res.sendFile(path.join(__dirname, "views", "new-page.html"));
-});
-
-const one = (req, res, next) => {
-  console.log("one");
-  next();
-};
-const two = (req, res, next) => {
-  console.log("two");
-  next();
-};
-
-const three = (req, res, next) => {
-  console.log("three fishish!");
-  res.send("finish chained");
-};
-
-app.get("/chain", [one, two, three]); // step by step callback with next() function based on middleware
 
 // 👇 All your other routes go above this
 app.use((req, res, next) => {
