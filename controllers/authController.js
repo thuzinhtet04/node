@@ -12,6 +12,7 @@ require("dotenv").config();
 const fsPromise = require("fs").promises;
 
 const handleLogin = async (req, res) => {
+  
   const { user, pass } = req.body;
   if (!user || !pass)
     return res
@@ -24,8 +25,6 @@ const handleLogin = async (req, res) => {
   //evaluate passowrd
   const match = await bcrypt.compare(pass, foundUser.password);
   if (match) {
-
-
     //create jwt token
     const accessToken = jwt.sign(
       {
@@ -55,11 +54,12 @@ const handleLogin = async (req, res) => {
     );
     res.cookie("jwtRefreshToken", refreshToken, {
       httpOnly: true,
+      sameSite: "None",
+      secure: true,
       maxAge: 24 * 60 * 60 * 1000,
     });
     res.json({
       accessToken,
-    
     });
   } else {
     res.sendStatus(401);

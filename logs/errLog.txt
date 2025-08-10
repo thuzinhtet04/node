@@ -17,3 +17,57 @@
 20250810	19:52:23	775ec870-4d8f-4a33-bb09-9fff8fc4c50c	Error : Cannot set headers after they are sent to the client 
 20250810	19:53:04	33439ee9-9cf8-4ff6-a80f-8230db1ff03c	Error : Cannot set headers after they are sent to the client 
 20250810	19:53:31	97646c22-ccd4-4e64-b85b-dab2a375a4d8	Error : Cannot set headers after they are sent to the client 
+20250810	20:51:02	b5dc6ad9-0720-4de3-980c-ea972ef7facc	Error : this origin is not allowed 
+20250810	20:51:31	5a046196-f514-4c4e-bc7f-7a5b88b182fe	Error : this origin is not allowed 
+20250810	20:52:29	8325c8b1-33e6-453a-bfa5-7ef959c9f838	Error : this origin is not allowed 
+20250810	20:52:30	0e8902b1-8a25-4256-a0b3-96d473f2ce0e	Error : this origin is not allowed 
+20250810	20:52:31	e96921d7-09da-4688-b507-f76705deff57	Error : this origin is not allowed 
+20250810	20:52:33	dfbf4449-cf3c-42d1-b5f7-8c6036134412	Error : this origin is not allowed 
+20250810	20:52:39	84c9e984-15b5-4059-92b0-e2d59f93ad7b	Error : this origin is not allowed 
+20250810	20:53:12	380a1813-af5b-4ad0-ad9c-549402d33c86	Error : this origin is not allowed 
+20250810	20:53:29	08c74e4e-4c3d-41d4-a8ce-d87699172022	Error : this origin is not allowed 
+20250810	20:54:23	3ad28168-0d79-477d-a720-d42c2820866a	Error : this origin is not allowed 
+20250810	20:54:24	89f107e4-4b38-4bab-9a3a-83ec11a13fc7	Error : this origin is not allowed 
+20250810	20:54:53	0b60c97a-6a87-4958-9246-94e751afcce9	TypeError : Cannot destructure property 'user' of 'req.body' as it is undefined. 
+20250810	20:54:55	299d9919-68a2-455f-aaeb-36195f380d68	TypeError : Cannot destructure property 'user' of 'req.body' as it is undefined. 
+20250810	20:55:16	8a99020e-2884-477c-89ae-5c426e8a52ea	TypeError : Cannot destructure property 'user' of 'req.body' as it is undefined. 
+20250810	20:55:19	9f4ada9c-d80c-414f-adbb-c13700d54cb8	TypeError : Cannot destructure property 'user' of 'req.body' as it is undefined. 
+20250810	20:55:55	5c6e6ab0-48a5-4262-a4d8-50511c34855c	TypeError : Cannot destructure property 'user' of 'req.body' as it is undefined. 
+20250810	20:55:58	85d9dd9a-c416-45e5-b63e-cdcff0450e9f	TypeError : Cannot destructure property 'user' of 'req.body' as it is undefined. 
+20250810	20:56:46	fd8941c7-a399-4add-aadd-97433c6671ac	TypeError : Cannot destructure property 'user' of 'req.body' as it is undefined. 
+20250810	20:56:48	f6091e63-fd2d-43f6-9094-8a7717ac1e30	TypeError : Cannot destructure property 'user' of 'req.body' as it is undefined. 
+20250810	20:57:10	79e8dc9c-0cd5-4733-85aa-5f826c2deb1f	TypeError : Cannot destructure property 'user' of 'req.body' as it is undefined. 
+20250810	20:57:14	981b6482-737e-4367-8b30-0a2a2ddcc5fa	TypeError : Cannot destructure property 'user' of 'req.body' as it is undefined. 
+20250810	20:57:15	3606b0a7-24f9-44ef-a2a2-43b3323a7435	TypeError : Cannot destructure property 'user' of 'req.body' as it is undefined. 
+20250810	20:57:21	72198b52-3cdb-42c4-af2d-8407e4c75332	TypeError : Cannot destructure property 'user' of 'req.body' as it is undefined. 
+20250810	20:58:27	a0aa7fb3-7af1-4480-aca1-c476e1168cfe	TypeError : Cannot destructure property 'user' of 'req.body' as it is undefined. 
+20250810	20:58:42	661bb713-e3f0-45c2-a70f-bd676ecc97c6	TypeError : Cannot destructure property 'user' of 'req.body' as it is undefined. 
+20250810	20:58:44	33ddb500-803c-4d97-9e2d-3846f4910759	TypeError : Cannot destructure property 'user' of 'req.body' as it is undefined. 
+20250810	20:58:47	01d65e5c-d173-44a5-9cce-b94edbd16e71	TypeError : Cannot destructure property 'user' of 'req.body' as it is undefined. 
+20250810	20:58:57	88331539-ac47-46eb-a15c-75df04c79e19	TypeError : Cannot destructure property 'user' of 'req.body' as it is undefined. 
+20250810	20:58:59	48a932ab-89a6-40b6-9834-bba46da6ea4c	TypeError : Cannot destructure property 'user' of 'req.body' as it is undefined. 
+20250810	20:59:13	f2e62b5a-b8d1-49c7-8f04-caad1fdfc838	TypeError : Cannot destructure property 'user' of 'req.body' as it is undefined. 
+20250810	20:59:24	3dd25eae-3432-42f0-b233-b9b8bd9728b9	TypeError : Converting circular structure to JSON
+    --> starting at object with constructor 'Socket'
+    |     property 'parser' -> object with constructor 'HTTPParser'
+    --- property 'socket' closes the circle 
+20250810	20:59:46	3146f8ea-9125-44eb-ab20-7ee6014824fb	TypeError : res.text is not a function 
+20250810	20:59:58	721fc955-2534-448b-98a0-f20c35718627	TypeError : Converting circular structure to JSON
+    --> starting at object with constructor 'Socket'
+    |     property 'parser' -> object with constructor 'HTTPParser'
+    --- property 'socket' closes the circle 
+20250810	21:00:18	b391ac9c-2f78-4e27-ac9b-d33ab0803a8a	TypeError : Cannot destructure property 'user' of 'req.body' as it is undefined. 
+20250810	21:00:39	5a82ee06-e6e9-4a24-bfaf-d76c25ef26de	TypeError : Cannot destructure property 'user' of 'req.body' as it is undefined. 
+20250810	21:02:30	4d980d92-c9e7-4d4a-8278-08b714918a3c	TypeError : res.headers is not a function 
+20250810	21:02:31	feaa782e-e187-45c7-bc25-d2519289f8d2	TypeError : res.headers is not a function 
+20250810	21:02:32	6e7adf1c-fac4-40ee-beea-7cdfb8c84fb3	TypeError : res.headers is not a function 
+20250810	21:02:33	90858472-6559-494b-a64f-e68b5b745628	TypeError : res.headers is not a function 
+20250810	21:02:33	13f86db2-4637-4d3c-bced-67036151d2e6	TypeError : res.headers is not a function 
+20250810	21:02:33	4cfb7223-5c2d-4092-9e60-b5c8a7a14cd6	TypeError : res.headers is not a function 
+20250810	21:02:34	7eb9a8e3-44c4-4983-ae85-ae323ab395e2	TypeError : res.headers is not a function 
+20250810	21:02:34	5e8deaf7-16e2-4e8b-b5b9-40b8e33dc482	TypeError : res.headers is not a function 
+20250810	21:02:35	6386dea0-7bfb-4964-a6d1-c8bfd2f69c3e	TypeError : res.headers is not a function 
+20250810	21:02:35	f7bb1187-d372-4c73-bb3b-551bf06f03b1	TypeError : res.headers is not a function 
+20250810	21:02:36	ee3d98d4-cb8d-439b-98da-960899787079	TypeError : res.headers is not a function 
+20250810	21:03:33	d0643c32-e604-4137-ae23-accca178fbe5	TypeError : res.headers is not a function 
+20250810	21:04:09	fa8c39f7-faf4-4ca3-bb99-60af8d0d3fc9	TypeError : req.headers is not a function 
