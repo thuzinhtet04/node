@@ -71,3 +71,6 @@
 20250810	21:02:36	ee3d98d4-cb8d-439b-98da-960899787079	TypeError : res.headers is not a function 
 20250810	21:03:33	d0643c32-e604-4137-ae23-accca178fbe5	TypeError : res.headers is not a function 
 20250810	21:04:09	fa8c39f7-faf4-4ca3-bb99-60af8d0d3fc9	TypeError : req.headers is not a function 
+20250814	23:55:03	6df2ccff-cfd8-4872-ba5f-7dace17689ac	TypeError : req.sentStatus is not a function 
+20250814	23:57:03	00ced5ee-3cb0-4b0c-8a7e-61459b9997ad	TypeError : res.sentStatus is not a function 
+20250814	23:59:57	e6356cb7-5b78-4da6-9691-68f4d9281864	TypeError : Cannot read properties of undefined (reading 'firstname') 

@@ -7,6 +7,7 @@ const userDB = {
 
 const path = require("path");
 const jwt = require("jsonwebtoken");
+const { userInfo } = require("os");
 
 require("dotenv").config();
 
@@ -22,11 +23,13 @@ const handleRefreshToken = (req, res) => {
   );
   if (!foundUser) return res.sendStatus(403); // forbidden
 
+  const roles = Object.values(foundUser.roles);
 
   jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, decoded) => {
-    if (err || decoded.username !== foundUser.username) return res.json({ error: err.message });
+    if (err || decoded.username !== foundUser.username)
+      return res.json({ error: err.message });
     const accessToken = jwt.sign(
-      { username: decoded.username },
+      { UserInfo: { username: decoded.username, roles: roles } },
       process.env.ACCESS_TOKEN_SECRET,
       { expiresIn: "30s" }
     );

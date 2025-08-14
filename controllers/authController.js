@@ -8,11 +8,11 @@ const userDB = {
 const path = require("path");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const { userInfo } = require("os");
 require("dotenv").config();
 const fsPromise = require("fs").promises;
 
 const handleLogin = async (req, res) => {
-  
   const { user, pass } = req.body;
   if (!user || !pass)
     return res
@@ -25,10 +25,15 @@ const handleLogin = async (req, res) => {
   //evaluate passowrd
   const match = await bcrypt.compare(pass, foundUser.password);
   if (match) {
+    const roles = Object.values(foundUser.roles);
+
     //create jwt token
     const accessToken = jwt.sign(
       {
-        username: foundUser.username,
+        UserInfo: {
+          username: foundUser.username,
+          roles : roles, //set role in jwt token for authorization
+        }
       },
       process.env.ACCESS_TOKEN_SECRET,
       { expiresIn: "30s" }
