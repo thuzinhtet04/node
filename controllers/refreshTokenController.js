@@ -9,8 +9,6 @@ const path = require("path");
 const jwt = require("jsonwebtoken");
 const { userInfo } = require("os");
 
-require("dotenv").config();
-
 const handleRefreshToken = (req, res) => {
   const cookies = req.cookies;
   if (!cookies?.jwtRefreshToken) return res.sendStatus(401);

@@ -6,8 +6,15 @@ const errorHandler = require("./middleware/errorHandler");
 const verifyJWT = require("./middleware/verifyJWT");
 const cookieParser = require("cookie-parser");
 const credientials = require("./middleware/credientials");
+const moogoose = require("mongoose");
+const connetDB = require("./config/dbConn");
 const app = express();
 const PORT = process.env.PORT || 3500;
+
+require("dotenv").config();
+
+//connect MongoseDb
+connetDB();
 
 //use before cors middleware because this middleware set accessControlAllowOrigin to true that need in cors
 // especially for pre-fligth response
@@ -51,4 +58,7 @@ app.use((req, res, next) => {
 
 app.use(errorHandler);
 
-app.listen(PORT, () => console.log(`server running on port ${PORT}`));
+moogoose.connection.once("open", () => { //after connection is success , listen server
+  console.log("connected to mongodb");
+  app.listen(PORT, () => console.log(`server running on port ${PORT}`));
+});

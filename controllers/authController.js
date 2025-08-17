@@ -9,7 +9,6 @@ const path = require("path");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { userInfo } = require("os");
-require("dotenv").config();
 const fsPromise = require("fs").promises;
 
 const handleLogin = async (req, res) => {
@@ -32,8 +31,8 @@ const handleLogin = async (req, res) => {
       {
         UserInfo: {
           username: foundUser.username,
-          roles : roles, //set role in jwt token for authorization
-        }
+          roles: roles, //set role in jwt token for authorization
+        },
       },
       process.env.ACCESS_TOKEN_SECRET,
       { expiresIn: "30s" }
