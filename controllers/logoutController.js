@@ -1,12 +1,6 @@
-const userDB = {
-  users: require("../model/users.json"),
-  setUsers: function (data) {
-    this.users = data;
-  },
-};
+const User = require("../model/User");
 
 const path = require("path");
-const fsPromise = require("fs").promises;
 
 const handleLogout = async (req, res) => {
   //on client delete also access token
@@ -15,34 +9,25 @@ const handleLogout = async (req, res) => {
 
   const refreshToken = cookies.jwtRefreshToken;
 
-  const foundUser = userDB.users.find(
-    (person) => person.refreshToken === refreshToken
-  );
+  const foundUser = await User.findOne({ refreshToken: refreshToken });
   if (!foundUser) {
     res.clearCookie("jwtRefreshToken", {
       httpOnly: true,
-      sameSite: "None",
+      // sameSite: "None",
       secure: true,
-     
     });
 
     return res.sendStatus(204); // no-content
   }
   //Delete refresh token in db
-  const otherUsers = userDB.users.filter(
-    (person) => person.refreshToken !== foundUser.refreshToken
-  );
-  const currentUser = { ...foundUser, refreshToken: "" };
-  userDB.setUsers([...otherUsers, currentUser]);
-  await fsPromise.writeFile(
-    path.join(__dirname, "..", "model", "users.json"),
-    JSON.stringify(userDB.users)
-  );
+
+  foundUser.refreshToken = "";
+  const result = await foundUser.save();
+
   res.clearCookie("jwtRefreshToken", {
     httpOnly: true,
-    sameSite: "None",
+    // sameSite: "None",
     secure: true,
- 
   }); // in production , add also  secure : true , that only work in https:// not http://
 
   return res.sendStatus(204); // forbidden
